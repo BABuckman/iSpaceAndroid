@@ -2,7 +2,7 @@
  Repository for all iSpace Android projects
 
 Public repository
-![TheMaster](https://github.com/Mawuli87/android/blob/master/WordBF/jesus.jpg)
+![TheMaster](https://github.com/BABuckman/iSpaceAndroid/blob/main/DiceRollerWithImage/Screenshot%202022-01-19%20at%2011.11.32.png)
 
 It uses a BitmapShader and *does not*:
 * create a copy of the original bitmap
