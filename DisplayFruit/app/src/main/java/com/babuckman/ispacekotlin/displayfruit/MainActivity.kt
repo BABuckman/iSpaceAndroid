@@ -35,8 +35,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         val from = arrayOf("friutname", "friutimages")
-        val to = arrayOf(R.id.textView, R.id.imageView)
+        val to = intArrayOf(R.id.textView, R.id.imageView)
 
         var simpleAdapter = SimpleAdapter(this, list, R.layout.list_row_items, from, to)
+
+        listview.adapter = simpleAdapter
     }
 }
