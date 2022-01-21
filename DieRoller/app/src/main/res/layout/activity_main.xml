@@ -6,4 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:padding="20sp"
+            android:layout_margin="20sp"
+            android:id="@+id/imageview"
+            android:src="@drawable/dice1"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/message"
+            android:textSize="20sp"
+
+            />
+    </LinearLayout>
+
 </RelativeLayout>

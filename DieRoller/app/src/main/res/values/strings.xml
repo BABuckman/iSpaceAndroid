@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DieRoller App</string>
+    <string name="message">Click to roll dice</string>
 </resources>
