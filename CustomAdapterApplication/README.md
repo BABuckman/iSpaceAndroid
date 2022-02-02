@@ -2,7 +2,7 @@
  Repository for demonstrating how to construct a recycler view project
 
 Public repository
-![TheMaster](https://github.com/BABuckman/iSpaceAndroid/blob/main/DiceRollerWithImage/Screenshot%202022-01-19%20at%2011.11.32.png)
+![TheMaster](https://github.com/BABuckman/iSpaceAndroid/blob/main/CustomAdapterApplication/Screenshot%202022-02-02%20at%2015.58.42.png)
 
 Project uses a *Glide*
 You can use gradle: 
