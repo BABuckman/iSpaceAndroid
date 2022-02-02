@@ -4,8 +4,17 @@
 Public repository
 ![TheMaster](https://github.com/BABuckman/iSpaceAndroid/blob/main/DiceRollerWithImage/Screenshot%202022-01-19%20at%2011.11.32.png)
 
-It uses a BitmapShader and *does not*:
-* create a copy of the original bitmap
+Project uses a *Glide*
+You can use gradle: 
+repositories {
+  google()
+  mavenCentral()
+}
+
+dependencies {
+  implementation 'com.github.bumptech.glide:glide:4.12.0'
+  annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+}
 
 Build Gradle 
 ------ 
