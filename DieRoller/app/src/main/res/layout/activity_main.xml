@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_height="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_centerInParent="true">
-        <ImageView
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:padding="20sp"
-            android:layout_gravity="center"
-            android:layout_margin="20sp"
-            android:id="@+id/imageview"
-            android:src="@drawable/dice1"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/message"
-            android:textSize="30sp"
-            android:textAlignment="center"
-            android:textColor="@color/purple_700"
-            />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:theme="@style/TextAppearance.AppCompat.Menu">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:id="@+id/toolbar"
+        app:popupTheme="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
+        />
+    </com.google.android.material.appbar.AppBarLayout>
 
-</RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/container"/>
+
+</LinearLayout>
