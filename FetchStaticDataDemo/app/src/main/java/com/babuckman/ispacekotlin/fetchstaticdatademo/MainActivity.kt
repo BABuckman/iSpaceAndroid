@@ -20,5 +20,34 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.commit {
             add<HomeFragment>(R.id.container, null)
         }
+
+        /*
+        binding.navBottom.setOnNavigationItemReselectedListener{
+            item -> when(item.itemId){
+                R.id.home -> goToHome()
+            R.id.profile -> goToProfile()
+            R.id.camera -> goToCamera()
+            R.id.shop -> goToShop()
+            else -> false
+            }
+        }
+
+         */
+    }
+
+    private fun goToShop() {
+        TODO("Not yet implemented")
+    }
+
+    private fun goToCamera() {
+        TODO("Not yet implemented")
+    }
+
+    private fun goToProfile() {
+        TODO("Not yet implemented")
+    }
+
+    private fun goToHome() {
+        TODO("Not yet implemented")
     }
 }

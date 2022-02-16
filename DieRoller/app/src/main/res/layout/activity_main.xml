@@ -12,9 +12,10 @@
         android:layout_width="match_parent"
         android:layout_centerInParent="true">
         <ImageView
-            android:layout_width="200sp"
-            android:layout_height="200sp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:padding="20sp"
+            android:layout_gravity="center"
             android:layout_margin="20sp"
             android:id="@+id/imageview"
             android:src="@drawable/dice1"
@@ -23,8 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/message"
-            android:textSize="20sp"
-
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
             />
     </LinearLayout>
 
