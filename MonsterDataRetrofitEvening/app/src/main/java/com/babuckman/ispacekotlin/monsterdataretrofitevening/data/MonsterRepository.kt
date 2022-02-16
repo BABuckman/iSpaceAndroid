@@ -13,7 +13,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 class MonsterRepository(val app:Application) {
-    private val monsterData = MutableLiveData<List<MonsterData>>()
+
+    val monsterData = MutableLiveData<List<MonsterData>>()
 
     init {
         CoroutineScope(Dispatchers.IO).launch {
@@ -23,7 +24,7 @@ class MonsterRepository(val app:Application) {
     //thread to handle webservice
     @WorkerThread
     suspend fun callWebService() {
-        if (networkAvailable()) {
+        if (networkAvailable()) { //Check for internet access
             val retrofit = Retrofit.Builder()
                 .baseUrl(WEB_SERVICE_URL)
                 .addConverterFactory(MoshiConverterFactory.create())

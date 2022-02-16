@@ -10,7 +10,9 @@ import com.babuckman.ispacekotlin.monsterdataretrofitevening.ui.HomeFragment
 import com.babuckman.ispacekotlin.monsterdataretrofitevening.ui.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
+
     lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //bind fragment object
