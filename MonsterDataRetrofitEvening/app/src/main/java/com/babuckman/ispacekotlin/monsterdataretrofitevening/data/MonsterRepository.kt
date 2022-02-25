@@ -31,6 +31,7 @@ class MonsterRepository(val app:Application) {
                 .build()
             val service = retrofit.create(MonsterService::class.java)
             val serviceData = service.getMonsterData().body() ?: emptyList()
+
             monsterData.postValue(serviceData)
         }
     }

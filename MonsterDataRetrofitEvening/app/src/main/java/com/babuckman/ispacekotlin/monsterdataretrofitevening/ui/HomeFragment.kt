@@ -5,15 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import com.babuckman.ispacekotlin.monsterdataretrofitevening.R
 import com.babuckman.ispacekotlin.monsterdataretrofitevening.data.MonsterData
-import com.babuckman.ispacekotlin.monsterdataretrofitevening.data.MonsterRepository
 import com.babuckman.ispacekotlin.monsterdataretrofitevening.databinding.FragmentHomeBinding
-import java.util.*
+import com.babuckman.ispacekotlin.monsterdataretrofitevening.util.MonsterAdapter
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), MonsterAdapter.HandleMonsterItem {
 
     private lateinit var viewModel: HomeViewModel
     private lateinit var binding: FragmentHomeBinding
@@ -25,13 +28,26 @@ class HomeFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         viewModel.monsterData.observe(viewLifecycleOwner, {
-            val str = StringBuilder()
-            for (monsterD in it){
-                str.append(monsterD.monsterName + "\n")
-            }
-            binding.tvNames.text = str
+
+            var adapter = MonsterAdapter(requireContext(), it, this)
+            binding.recyclerview.adapter = adapter
         })
 
         return binding.root
+    }
+
+    override fun monsterClicked(monster: MonsterData) {
+        requireActivity().supportFragmentManager.commit {
+            val bottomNavigationView: BottomNavigationView =
+                requireActivity().findViewById(R.id.bottom_nav)
+            bottomNavigationView.visibility = View.INVISIBLE
+
+            replace<ProfileFragment>(R.id.container, null, null)
+        }
+
+        viewModel.selectedMonster.value = listOf(monster)
+        val navController: NavController = Navigation.findNavController(
+            requireActivity(), R.id.container)
+        navController.navigate(R.id.action_homeFragment_to_profileFragment)
     }
 }
