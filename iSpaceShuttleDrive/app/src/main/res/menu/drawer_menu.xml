@@ -14,15 +14,15 @@
             android:title="History"
             android:icon="@drawable/history"/>
 
-        <item android:id="@+id/feedback"
+        <item android:id="@+id/Feedback"
             android:title="Feedback"
             android:icon="@drawable/feedback"/>
 
-        <item android:id="@+id/rateus"
+        <item android:id="@+id/Rateus"
             android:title="Rate us"
             android:icon="@drawable/rating"/>
 
-        <item android:id="@+id/logout"
+        <item android:id="@+id/Logout"
             android:title="Logout"
             android:icon="@drawable/logout"/>
     </group>
