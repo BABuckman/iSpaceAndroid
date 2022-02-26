@@ -8,32 +8,30 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.babuckman.ispacekotlin.myapplication.databinding.ActivityHomeBinding
+import com.babuckman.ispacekotlin.myapplication.databinding.ActivityMainBinding
 import com.babuckman.ispacekotlin.myapplication.ui.HomeActivity
 
 class MainActivity : AppCompatActivity() {
-    //Instance Variables
-    lateinit var username:EditText
-    lateinit var password:EditText
-    lateinit var login:Button
+    //Variables
+    lateinit var binding:ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //bind view to object
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        //instantiate variables
-        username = findViewById(R.id.edtUsername)
-        password = findViewById(R.id.editTextTextPassword)
-        login = findViewById(R.id.btnLogin)
-
-        login.setOnClickListener{
-            //Log.i("TAG", "Login page worked")
+        //handle button click event
+        binding.btnLogin.setOnClickListener{
+            //Log.i("TAG", "Login page worked") // Log for testing click event
             loginNow()
         }
     }
 
     fun loginNow() {
-        val name:String = username.toString()
-        val passwordString:String = password.toString()
+        val name:String = binding.edtUsername.text.toString()
+        val passwordString:String = binding.editTextTextPassword.text.toString()
 
         if(name.isEmpty() || passwordString.isEmpty()){
             Toast.makeText(this, "Please enter your username", Toast.LENGTH_SHORT).show()

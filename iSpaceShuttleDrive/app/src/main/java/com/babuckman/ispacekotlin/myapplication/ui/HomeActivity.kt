@@ -47,27 +47,32 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun goToLogout():Boolean {
+        Toast.makeText(this@HomeActivity, "Success! To logout", Toast.LENGTH_SHORT).show()
         return true
     }
 
     private fun goToRate():Boolean{
+        Toast.makeText(this@HomeActivity, "Success! To Rate us", Toast.LENGTH_SHORT).show()
         return true
     }
 
     private fun goToFeedback():Boolean {
+        Toast.makeText(this@HomeActivity, "Success! To Feedback", Toast.LENGTH_SHORT).show()
         return true
     }
 
     private fun goToHistory(): Boolean {
+        Toast.makeText(this@HomeActivity, "Success! To History", Toast.LENGTH_SHORT).show()
         return true
     }
 
     private fun goToInvoice(): Boolean {
+        Toast.makeText(this@HomeActivity, "Success! To Invoice", Toast.LENGTH_SHORT).show()
         return true
     }
 
     private fun goToBooking(): Boolean {
-        Toast.makeText(this@HomeActivity, "Success!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@HomeActivity, "Success! To Booking", Toast.LENGTH_SHORT).show()
         return true
     }
 }
