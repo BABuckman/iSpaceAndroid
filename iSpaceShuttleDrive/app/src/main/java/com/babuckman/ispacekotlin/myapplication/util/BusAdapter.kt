@@ -5,18 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.babuckman.ispacekotlin.myapplication.R
-import com.babuckman.ispacekotlin.myapplication.data.BookingData
 import com.babuckman.ispacekotlin.myapplication.data.BusData
 import com.bumptech.glide.Glide
 
-class BookingAdapter(val context: Context,
-                     val busList:List<BusData>,
-                     val bookingItem:HandleBookingClick,):
-    RecyclerView.Adapter<BookingAdapter.ViewHolder>(){
+class BusAdapter(val context: Context,
+                 val busList:List<BusData>,
+                 val bookingItem:HandleBookingClick,):
+    RecyclerView.Adapter<BusAdapter.ViewHolder>(){
 
     inner class ViewHolder(ItemView: View):RecyclerView.ViewHolder(ItemView){
 
@@ -24,7 +22,7 @@ class BookingAdapter(val context: Context,
         val busImage:ImageView = ItemView.findViewById(R.id.imgShuttle)
         val busType: TextView = ItemView.findViewById(R.id.txtBusType)
         val busNumber: TextView = ItemView.findViewById(R.id.txtBusNumber)
-        //val busStart: TextView = ItemView.findViewById(R.id.txtStart)
+        val seats: TextView = ItemView.findViewById(R.id.txtSeats)
         //val busDestination: TextView = ItemView.findViewById(R.id.txtDestination)
         //val busFare: TextView = ItemView.findViewById(R.id.txtFare)
     }
@@ -43,12 +41,17 @@ class BookingAdapter(val context: Context,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val bus = busList[position]
 
-        holder.busType.text = bus.busType
-        holder.busNumber.text = bus.busNumber
+        holder.busType.text = "Bus Type.: "+ bus.busType
+        holder.busNumber.text = "Bus No.: "+ bus.busNumber
+        holder.seats.text = "No. of seats: "+ bus.seats
 
         Glide.with(context)
             .load(bus.busImage)
             .into(holder.busImage)
+
+        holder.itemView.setOnClickListener {
+            bookingItem.bookingClick(position)
+        }
     }
 
     override fun getItemCount(): Int {

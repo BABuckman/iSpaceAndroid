@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ISpaceShuttleDrive">
         <activity
+            android:name=".ui.BookingActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.HomeActivity"
             android:exported="false" />
         <activity
