@@ -30,17 +30,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun loginNow() {
-        val name:String = binding.edtUsername.text.toString()
-        val passwordString:String = binding.editTextTextPassword.text.toString()
+        val username:String = binding.edtUsername.text.toString()
+        val password:String = binding.editTextTextPassword.text.toString()
 
-        if(name.isEmpty() || passwordString.isEmpty()){
+        if(username.isEmpty() || password.isEmpty()){
             Toast.makeText(this, "Please enter your username", Toast.LENGTH_SHORT).show()
         }else{
-           // if(name == "Ben" && passwordString == "123"){
+            if(username == "Ben" && password == "123"){
                 intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
-            //}
+                intent.putExtra("username",username)
 
+                startActivity(intent)
+                }
+
+            }
         }
-    }
 }

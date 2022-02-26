@@ -1,39 +1,44 @@
 package com.babuckman.ispacekotlin.myapplication.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.babuckman.ispacekotlin.myapplication.R
+import com.babuckman.ispacekotlin.myapplication.databinding.ActivityHomeBinding
 import com.google.android.material.navigation.NavigationView
 
 class HomeActivity : AppCompatActivity() {
+
     //instantiate variables
+    lateinit var binding:ActivityHomeBinding
     lateinit var toggle:ActionBarDrawerToggle
-    lateinit var drawerLayout: DrawerLayout
-    lateinit var navigationView: NavigationView
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //setup variables
         toolbar = findViewById(R.id.toolbar)
-        drawerLayout = findViewById(R.id.drawer_layout)
-        navigationView = findViewById(R.id.nav_view)
 
         //this makes the menu icon on the toolbar clickable
-       toggle = ActionBarDrawerToggle(this,drawerLayout, toolbar,R.string.openDrawer, R.string.closeDrawer )
-        drawerLayout.addDrawerListener(toggle)
+        toggle = ActionBarDrawerToggle(this,binding.drawerLayout, toolbar,R.string.openDrawer, R.string.closeDrawer )
+        binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        //get data from intent and place data in username on the drawer
+        var username:String = intent.getStringExtra("username").toString()
+
         //Set navigation listener
-        navigationView.setNavigationItemSelectedListener { data->
+        binding.navView.setNavigationItemSelectedListener { data->
             when(data.itemId){
                 R.id.Booking -> goToBooking()
                 R.id.Invoice -> goToInvoice()
@@ -72,7 +77,9 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun goToBooking(): Boolean {
-        Toast.makeText(this@HomeActivity, "Success! To Booking", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this@HomeActivity, "Success! To Booking", Toast.LENGTH_SHORT).show()
+        intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
         return true
     }
 }
