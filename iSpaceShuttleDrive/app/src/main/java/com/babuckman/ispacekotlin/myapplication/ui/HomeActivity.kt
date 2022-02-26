@@ -43,12 +43,12 @@ class HomeActivity : AppCompatActivity() {
         val busList = ArrayList<BusData>()
 
         //get data from intent and place data in username on the drawer
-        val intent = getIntent();
+        val intent = getIntent()
         var username:String = intent.getStringExtra("username").toString()
 
         //hardcode some buses for testing
         busList.add(
-            BusData("Bus No.:GS-001-22","Type: Non AC", 32, Constants.bus01)
+            BusData("GS-001-22","Non AC", 32, Constants.bus01)
         )
         busList.add(
             BusData("GS-002-22","AC", 24, Constants.bus02)
@@ -68,7 +68,7 @@ class HomeActivity : AppCompatActivity() {
                 val intent = Intent(this@HomeActivity, BookingActivity::class.java)
                 intent.putExtra("busType",busType)
                 intent.putExtra("busNumber",busNumber)
-                intent.putExtra("busImage",seats)
+                intent.putExtra("busSeat",seats)
                 intent.putExtra("busImage",busImage)
                 startActivity(intent)
             }
