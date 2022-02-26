@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.babuckman.ispacekotlin.myapplication"
-        minSdk 24
-        targetSdk 32
+        minSdk 21
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -54,17 +54,17 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
-    def retrofit2_version = "2.6.0"
-    implementation "com.squareup.retrofit2:retrofit:$retrofit2_version"
-    implementation "com.squareup.retrofit2:converter-moshi:$retrofit2_version"
+    def retrofit2_version = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
 
-    def coroutines_version = "1.5.2"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    def coroutines_version = "1.6.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0-native-mt"
 
-    def glide_version = "4.12.0"
-    implementation "com.github.bumptech.glide:glide:$glide_version"
-    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+    def glide_version = "4.13.1"
+    implementation "com.github.bumptech.glide:glide:4.13.1"
+    annotationProcessor "com.github.bumptech.glide:compiler:4.13.1"
 
     implementation "androidx.recyclerview:recyclerview:1.0.0"
     implementation "androidx.fragment:fragment-ktx:1.4.1"
