@@ -16,19 +16,12 @@ class HomeActivity : AppCompatActivity() {
 
 
     //instantiate variables
-<<<<<<< HEAD
     lateinit var binding:ActivityHomeBinding
     lateinit var adapter:BusAdapter
     lateinit var toggle:ActionBarDrawerToggle
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
     lateinit var viewModel:HomeViewModel
-=======
-    private lateinit var binding:ActivityHomeBinding
-    private lateinit var adapter:BookingAdapter
-    private lateinit var toggle:ActionBarDrawerToggle
-    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-//    lateinit var viewModel:HomeViewModel
->>>>>>> ef824a8b47278b1d0c3f1dfc3542aa984630ade1
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,7 +58,7 @@ class HomeActivity : AppCompatActivity() {
         )
         adapter = BusAdapter(this, busList,object:BusAdapter.HandleBookingClick{
             override fun bookingClick(position: Int) {
-<<<<<<< HEAD
+
                 val allBuses = busList[position]
                 val busType:String = allBuses.busType
                 val busNumber:String = allBuses.busNumber
@@ -78,24 +71,11 @@ class HomeActivity : AppCompatActivity() {
                 intent.putExtra("busImage",seats)
                 intent.putExtra("busImage",busImage)
                 startActivity(intent)
-=======
-//                val allBuses = busList[position]
-//                val busType:String = allBuses.busType
-//                val busNumber:String = allBuses.busNumber
-//                val busImage:Int = allBuses.busImage
->>>>>>> ef824a8b47278b1d0c3f1dfc3542aa984630ade1
             }
 
         })
         binding.recyclerView.adapter = adapter
 
-<<<<<<< HEAD
-=======
-        //get data from intent and place data in username on the drawer
-//        val intent = getIntent()
-//        var username:String = intent.getStringExtra("username").toString()
-
->>>>>>> ef824a8b47278b1d0c3f1dfc3542aa984630ade1
         //Set navigation listener
         binding.navView.setNavigationItemSelectedListener { data->
             when(data.itemId){
