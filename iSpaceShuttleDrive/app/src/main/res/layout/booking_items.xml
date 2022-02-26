@@ -26,7 +26,7 @@
         android:textStyle="bold"
         android:layout_marginTop="10dp"
         tools:text="SHUTTLE-001"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textColor="@color/company_color_1"/>
     <ImageView
         android:id="@+id/imgShuttle"
@@ -37,7 +37,9 @@
         android:scaleType="centerCrop"
         android:src="@raw/shuttle001"
         tools:src="@raw/shuttle001"
-        tools:contentDescription="SHUTTLE-001"/>
+        tools:contentDescription="SHUTTLE-001"
+        android:contentDescription="@string/todo"
+        tools:ignore="ContentDescription" />
     <TextView
         android:id="@+id/txtBusType"
         android:layout_width="match_parent"

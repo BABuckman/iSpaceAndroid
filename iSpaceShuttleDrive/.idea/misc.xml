@@ -5,7 +5,11 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/drawer_item_bg.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable-v24/drawer_item_selector.xml" value="0.1575" />
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/activity_feedback.xml" value="0.1" />
+=======
+        <entry key="app/src/main/res/layout/activity_booking.xml" value="0.21458333333333332" />
+>>>>>>> 2ff1626e75abda3854ad7439b67d1f9e3be93f3b
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.21" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
