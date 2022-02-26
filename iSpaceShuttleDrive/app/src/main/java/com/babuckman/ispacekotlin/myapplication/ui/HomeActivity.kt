@@ -1,15 +1,22 @@
 package com.babuckman.ispacekotlin.myapplication.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.babuckman.ispacekotlin.myapplication.MainActivity
 import com.babuckman.ispacekotlin.myapplication.R
 import com.google.android.material.navigation.NavigationView
 
 class HomeActivity : AppCompatActivity() {
+
+//    private lateinit var recyclerView: RecyclerView
+
     //instantiate variables
     lateinit var toggle:ActionBarDrawerToggle
     lateinit var drawerLayout: DrawerLayout
@@ -44,6 +51,13 @@ class HomeActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+//        recyclerView = findViewById(R.id.recyclerView)
+//
+//        recyclerView.layoutManager = LinearLayoutManager(this)
+//
+//        val intent = Intent(this@HomeActivity, MainActivity::class.java)
+//        startActivity(intent)
     }
 
     private fun goToLogout():Boolean {

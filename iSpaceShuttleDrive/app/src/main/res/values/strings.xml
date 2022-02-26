@@ -2,4 +2,6 @@
     <string name="app_name">iSpaceShuttleDrive</string>
     <string name="openDrawer">Open</string>
     <string name="closeDrawer">Close</string>
+    <string name="skip_intro">SKIP INTRO</string>
+    <string name="next">NEXT</string>
 </resources>
