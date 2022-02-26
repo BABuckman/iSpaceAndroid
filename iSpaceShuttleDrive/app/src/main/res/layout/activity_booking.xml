@@ -73,13 +73,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtBookingDate"
+                android:datePickerMode="spinner"
                 android:layout_margin="15dp"/>
             <TimePicker
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtBookingTime"
+
                 android:layout_margin="15dp"/>
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/btnBook"
+                android:text="Book Seat"
+                />
         </LinearLayout>
 
     </ScrollView>
