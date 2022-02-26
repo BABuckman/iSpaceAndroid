@@ -16,14 +16,14 @@ class BookingActivity:AppCompatActivity() {
 
         //retrieve bus information
         val intent = getIntent()
-        val busType = intent.getStringExtra("busType")
-        val busNumber = intent.getStringExtra("busNumber")
-        val busSeat = intent.getStringExtra("busSeat")
+        val busType:String = intent.getStringExtra("busType").toString()
+        val busNumber:String = intent.getStringExtra("busNumber").toString()
+        //val busSeat:String = intent.getIntExtra("busSeat")
         val busImage = intent.getStringExtra("busImage")
 
-        binding.txtBookingBusType.text = busType.toString()
-        binding.txtBookingBusNumber.text = busNumber.toString()
-        binding.txtBookingSeats.text = busSeat.toString()
-        
+        binding.txtBookingBusType.text = "Type: " + busType.toString()
+        binding.txtBookingBusNumber.text = "Bus No.: " + busNumber.toString()
+        //binding.txtBookingSeats.text = "No. of seats: " + busSeat.toString()
+
     }
 }
