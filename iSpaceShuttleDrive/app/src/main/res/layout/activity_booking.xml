@@ -1,7 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/imgBooking"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="20dp"
+                android:scaleType="centerCrop"
+                android:src="@raw/shuttle001"
+                tools:src="@raw/shuttle001"
+                tools:contentDescription="SHUTTLE IMAGE"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtBookingBusType"
+                android:textSize="24sp"
+                android:text="Bus Type"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:layout_margin="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtBookingBusNumber"
+                android:textSize="24sp"
+                android:text="Bus Number"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:layout_margin="15dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtBookingSeats"
+                android:textSize="24sp"
+                android:text="No. of seats:"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:layout_margin="15dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtBookingStart"
+                android:textSize="24sp"
+                android:layout_margin="15dp"
+                android:hint="Travelling From"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtBookingDestination"
+                android:textSize="24sp"
+                android:layout_margin="15dp"
+                android:hint="Travelling To"
+                />
+
+            <DatePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtBookingDate"
+                android:layout_margin="15dp"/>
+            <TimePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtBookingTime"
+                android:layout_margin="15dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>

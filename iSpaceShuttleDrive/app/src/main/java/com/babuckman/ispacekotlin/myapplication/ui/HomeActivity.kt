@@ -46,7 +46,7 @@ class HomeActivity : AppCompatActivity() {
 
         //hardcode some buses for testing
         busList.add(
-            BusData("Bus No.:GS-001-22","Type: Non AC", 32, Constants.bus01)
+            BusData("GS-001-22","Non AC", 32, Constants.bus01)
         )
         busList.add(
             BusData("GS-002-22","AC", 24, Constants.bus02)
@@ -56,6 +56,7 @@ class HomeActivity : AppCompatActivity() {
         )
         adapter = BusAdapter(this, busList,object:BusAdapter.HandleBookingClick{
             override fun bookingClick(position: Int) {
+
                 val allBuses = busList[position]
                 val busType:String = allBuses.busType
                 val busNumber:String = allBuses.busNumber
@@ -65,7 +66,7 @@ class HomeActivity : AppCompatActivity() {
                 val intent = Intent(this@HomeActivity, BookingActivity::class.java)
                 intent.putExtra("busType",busType)
                 intent.putExtra("busNumber",busNumber)
-                intent.putExtra("busImage",seats)
+                intent.putExtra("busSeat",seats)
                 intent.putExtra("busImage",busImage)
                 startActivity(intent)
 //                val allBuses = busList[position]
@@ -77,9 +78,11 @@ class HomeActivity : AppCompatActivity() {
         })
         binding.recyclerView.adapter = adapter
 
+
         //get data from intent and place data in username on the drawer
 //        val intent = getIntent()
 //        var username:String = intent.getStringExtra("username").toString()
+
         //Set navigation listener
         binding.navView.setNavigationItemSelectedListener { data->
             when(data.itemId){

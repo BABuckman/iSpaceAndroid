@@ -13,5 +13,17 @@ class BookingActivity:AppCompatActivity() {
         binding = ActivityBookingBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
+        //retrieve bus information
+//        val intent = getIntent()
+        val busType = intent.getStringExtra("busType")
+        val busNumber = intent.getStringExtra("busNumber")
+        val busSeat = intent.getStringExtra("busSeat")
+//        val busImage = intent.getStringExtra("busImage")
+
+        binding.txtBookingBusType.text = busType.toString()
+        binding.txtBookingBusNumber.text = busNumber.toString()
+        binding.txtBookingSeats.text = busSeat.toString()
+        
     }
 }
