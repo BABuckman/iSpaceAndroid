@@ -16,12 +16,10 @@ class HomeActivity : AppCompatActivity() {
 
 
     //instantiate variables
-    lateinit var binding:ActivityHomeBinding
-    lateinit var adapter:BusAdapter
-    lateinit var toggle:ActionBarDrawerToggle
-    lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    lateinit var viewModel:HomeViewModel
-
+    private lateinit var binding:ActivityHomeBinding
+    private lateinit var adapter:BusAdapter
+    private lateinit var toggle:ActionBarDrawerToggle
+    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,8 +41,8 @@ class HomeActivity : AppCompatActivity() {
         val busList = ArrayList<BusData>()
 
         //get data from intent and place data in username on the drawer
-        val intent = getIntent()
-        var username:String = intent.getStringExtra("username").toString()
+//        val intent = getIntent()
+//        var username:String = intent.getStringExtra("username").toString()
 
         //hardcode some buses for testing
         busList.add(
@@ -71,10 +69,19 @@ class HomeActivity : AppCompatActivity() {
                 intent.putExtra("busSeat",seats)
                 intent.putExtra("busImage",busImage)
                 startActivity(intent)
+//                val allBuses = busList[position]
+//                val busType:String = allBuses.busType
+//                val busNumber:String = allBuses.busNumber
+//                val busImage:Int = allBuses.busImage
             }
 
         })
         binding.recyclerView.adapter = adapter
+
+
+        //get data from intent and place data in username on the drawer
+//        val intent = getIntent()
+//        var username:String = intent.getStringExtra("username").toString()
 
         //Set navigation listener
         binding.navView.setNavigationItemSelectedListener { data->
@@ -102,7 +109,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun goToFeedback():Boolean {
-        Toast.makeText(this@HomeActivity, "Success! To Feedback", Toast.LENGTH_SHORT).show()
+        intent = Intent(this, FeedbackActivity::class.java)
+        startActivity(intent)
         return true
     }
 
