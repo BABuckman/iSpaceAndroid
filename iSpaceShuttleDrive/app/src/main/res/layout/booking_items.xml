@@ -35,8 +35,8 @@
         android:layout_margin="8dp"
         android:layout_marginTop="20dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/shuttle001"
-        tools:src="@drawable/shuttle001"
+        android:src="@raw/shuttle001"
+        tools:src="@raw/shuttle001"
         tools:contentDescription="SHUTTLE-001"/>
     <TextView
         android:id="@+id/txtBusType"
@@ -59,34 +59,14 @@
         tools:text="Bus No.: gh-1000"
         />
     <TextView
-        android:id="@+id/txtStart"
+        android:id="@+id/txtSeats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         android:layout_marginTop="5dp"
-        tools:text="From: Accra"
-        />
-    <TextView
-        android:id="@+id/txtDestination"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
-        android:layout_marginTop="5dp"
-        tools:text="To: Cape Coast"
-        />
-    <TextView
-        android:id="@+id/txtFare"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
-        android:layout_marginTop="5dp"
-        tools:text="Fare: GH100"
+        tools:text="No. of Seats: 30"
         />
 </LinearLayout>
 </androidx.cardview.widget.CardView>

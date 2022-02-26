@@ -67,4 +67,6 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
     implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation "androidx.fragment:fragment-ktx:1.4.1"
+    implementation "com.squareup.moshi:moshi-kotlin:1.8.0"
 }

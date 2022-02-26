@@ -21,4 +21,14 @@
         app:itemBackground="@drawable/drawer_item_selector"
         android:layout_height="match_parent"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recyclerView"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:spanCount="1"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        android:layout_height="match_parent"/>
+
 </androidx.drawerlayout.widget.DrawerLayout>
