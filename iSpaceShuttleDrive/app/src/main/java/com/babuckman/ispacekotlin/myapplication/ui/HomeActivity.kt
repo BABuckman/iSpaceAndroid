@@ -92,7 +92,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun goToFeedback():Boolean {
-        Toast.makeText(this@HomeActivity, "Success! To Feedback", Toast.LENGTH_SHORT).show()
+        intent = Intent(this, FeedbackActivity::class.java)
+        startActivity(intent)
         return true
     }
 
