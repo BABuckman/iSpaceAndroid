@@ -4,43 +4,70 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.babuckman.ispacekotlin.myapplication.MainActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.babuckman.ispacekotlin.myapplication.R
-import com.google.android.material.navigation.NavigationView
+import com.babuckman.ispacekotlin.myapplication.data.BusData
+import com.babuckman.ispacekotlin.myapplication.databinding.ActivityHomeBinding
+import com.babuckman.ispacekotlin.myapplication.util.BookingAdapter
+import com.babuckman.ispacekotlin.myapplication.util.Constants
 
 class HomeActivity : AppCompatActivity() {
 
-//    private lateinit var recyclerView: RecyclerView
 
     //instantiate variables
-    lateinit var toggle:ActionBarDrawerToggle
-    lateinit var drawerLayout: DrawerLayout
-    lateinit var navigationView: NavigationView
-    lateinit var toolbar: androidx.appcompat.widget.Toolbar
+    private lateinit var binding:ActivityHomeBinding
+    private lateinit var adapter:BookingAdapter
+    private lateinit var toggle:ActionBarDrawerToggle
+    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
+//    lateinit var viewModel:HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //setup variables
         toolbar = findViewById(R.id.toolbar)
-        drawerLayout = findViewById(R.id.drawer_layout)
-        navigationView = findViewById(R.id.nav_view)
 
         //this makes the menu icon on the toolbar clickable
-       toggle = ActionBarDrawerToggle(this,drawerLayout, toolbar,R.string.openDrawer, R.string.closeDrawer )
-        drawerLayout.addDrawerListener(toggle)
+        toggle = ActionBarDrawerToggle(this,binding.drawerLayout, toolbar,R.string.openDrawer, R.string.closeDrawer )
+        binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        //set adapter
+        binding.recyclerView.layoutManager = GridLayoutManager(this,1)
+        val busList = ArrayList<BusData>()
+
+        //hardcode some buses for testing
+        busList.add(
+            BusData("GS-001-22","Non AC", 32, Constants.bus01)
+        )
+        busList.add(
+            BusData("GS-002-22","AC", 24, Constants.bus02)
+        )
+        busList.add(
+            BusData("GS-020-22","AC", 50, Constants.bus03)
+        )
+        adapter = BookingAdapter(this, busList,object:BookingAdapter.HandleBookingClick{
+            override fun bookingClick(position: Int) {
+//                val allBuses = busList[position]
+//                val busType:String = allBuses.busType
+//                val busNumber:String = allBuses.busNumber
+//                val busImage:Int = allBuses.busImage
+            }
+
+        })
+        binding.recyclerView.adapter = adapter
+
+        //get data from intent and place data in username on the drawer
+//        val intent = getIntent()
+//        var username:String = intent.getStringExtra("username").toString()
+
         //Set navigation listener
-        navigationView.setNavigationItemSelectedListener { data->
+        binding.navView.setNavigationItemSelectedListener { data->
             when(data.itemId){
                 R.id.Booking -> goToBooking()
                 R.id.Invoice -> goToInvoice()
@@ -52,36 +79,37 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
-//        recyclerView = findViewById(R.id.recyclerView)
-//
-//        recyclerView.layoutManager = LinearLayoutManager(this)
-//
-//        val intent = Intent(this@HomeActivity, MainActivity::class.java)
-//        startActivity(intent)
     }
 
     private fun goToLogout():Boolean {
+        Toast.makeText(this@HomeActivity, "Success! To logout", Toast.LENGTH_SHORT).show()
         return true
     }
 
     private fun goToRate():Boolean{
+        Toast.makeText(this@HomeActivity, "Success! To Rate us", Toast.LENGTH_SHORT).show()
         return true
     }
 
     private fun goToFeedback():Boolean {
+        Toast.makeText(this@HomeActivity, "Success! To Feedback", Toast.LENGTH_SHORT).show()
         return true
     }
 
     private fun goToHistory(): Boolean {
+        Toast.makeText(this@HomeActivity, "Success! To History", Toast.LENGTH_SHORT).show()
         return true
     }
 
     private fun goToInvoice(): Boolean {
+        Toast.makeText(this@HomeActivity, "Success! To Invoice", Toast.LENGTH_SHORT).show()
         return true
     }
 
     private fun goToBooking(): Boolean {
-        Toast.makeText(this@HomeActivity, "Success!", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this@HomeActivity, "Success! To Booking", Toast.LENGTH_SHORT).show()
+        intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
         return true
     }
 }
