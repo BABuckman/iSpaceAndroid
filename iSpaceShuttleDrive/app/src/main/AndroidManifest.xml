@@ -20,7 +20,8 @@
         </activity>
         <activity
             android:name=".ui.BookingActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ui.HomeActivity"/>
         <activity
             android:name=".ui.HomeActivity"
             android:exported="false" />
@@ -35,7 +36,8 @@
         </activity>
         <activity
             android:name=".ui.FeedbackActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".ui.HomeActivity"/>
     </application>
 
 </manifest>

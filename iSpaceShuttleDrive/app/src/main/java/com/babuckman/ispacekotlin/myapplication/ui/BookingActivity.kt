@@ -45,6 +45,10 @@ class BookingActivity:AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
             val datePicker = DatePickerDialog(this@BookingActivity,this@BookingActivity,year, month, day)
             datePicker.show()
         }
+
+        //add back button to action bar
+        setSupportActionBar(binding.myToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onDateSet(p0: DatePicker?, yr: Int, mon: Int, dayofmonth: Int) {
