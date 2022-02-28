@@ -47,6 +47,7 @@ class BusAdapter(val context: Context,
 
         Glide.with(context)
             .load(bus.busImage)
+            .placeholder(R.drawable.account)
             .into(holder.busImage)
 
         holder.itemView.setOnClickListener {

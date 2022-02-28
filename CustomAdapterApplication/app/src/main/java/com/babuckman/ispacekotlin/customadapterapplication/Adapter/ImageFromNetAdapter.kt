@@ -11,7 +11,9 @@ import com.babuckman.ispacekotlin.customadapterapplication.Model.ImageFromNet
 import com.babuckman.ispacekotlin.customadapterapplication.R
 import com.bumptech.glide.Glide
 
-class ImageFromNetAdapter(private val context: Context, private val imageList: List<ImageFromNet>):RecyclerView.Adapter<ImageFromNetAdapter.ImageViewHolder>() {
+class ImageFromNetAdapter(
+    private val context: Context,
+    private val imageList: List<ImageFromNet>):RecyclerView.Adapter<ImageFromNetAdapter.ImageViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         val rootView = LayoutInflater.from(context).inflate(R.layout.card_view_layout, parent, false)

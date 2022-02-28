@@ -23,6 +23,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //set up data binding
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -36,6 +37,19 @@ class HomeActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        //Set navigation listener
+        binding.navView.setNavigationItemSelectedListener { data->
+            when(data.itemId){
+                R.id.booking -> goToBooking()
+                R.id.invoice -> goToInvoice()
+                R.id.history -> goToHistory()
+                R.id.feedback -> goToFeedback()
+                R.id.rateus -> goToRate()
+                R.id.logout -> goToLogout()
+                R.id.promotions -> goToPromotions()
+                else -> false
+            }
+        }
         //set adapter
         binding.recyclerView.layoutManager = GridLayoutManager(this,1)
         val busList = ArrayList<BusData>()
@@ -63,39 +77,25 @@ class HomeActivity : AppCompatActivity() {
                 val seats:Int = allBuses.seats
                 val busImage:Int = allBuses.busImage
 
-                val intent = Intent(this@HomeActivity, BookingActivity::class.java)
+                //Intent to send the chosen bus data to next activity
+                intent = Intent(this@HomeActivity, BookingActivity::class.java)
                 intent.putExtra("busType",busType)
                 intent.putExtra("busNumber",busNumber)
                 intent.putExtra("busSeat",seats)
                 intent.putExtra("busImage",busImage)
                 startActivity(intent)
-//                val allBuses = busList[position]
-//                val busType:String = allBuses.busType
-//                val busNumber:String = allBuses.busNumber
-//                val busImage:Int = allBuses.busImage
             }
-
         })
+        //set the recyclerView adapter
         binding.recyclerView.adapter = adapter
 
+        //set the back button on action bar
+        binding.navView
+    }
 
-        //get data from intent and place data in username on the drawer
-//        val intent = getIntent()
-//        var username:String = intent.getStringExtra("username").toString()
-
-        //Set navigation listener
-        binding.navView.setNavigationItemSelectedListener { data->
-            when(data.itemId){
-                R.id.Booking -> goToBooking()
-                R.id.Invoice -> goToInvoice()
-                R.id.History -> goToHistory()
-                R.id.Feedback -> goToFeedback()
-                R.id.Rateus -> goToRate()
-                R.id.Logout -> goToLogout()
-                else -> false
-            }
-        }
-
+    private fun goToPromotions(): Boolean {
+        Toast.makeText(this@HomeActivity, "Success! To Promotions", Toast.LENGTH_SHORT).show()
+        return true
     }
 
     private fun goToLogout():Boolean {
@@ -109,7 +109,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun goToFeedback():Boolean {
-        intent = Intent(this, FeedbackActivity::class.java)
+        intent = Intent(this@HomeActivity, FeedbackActivity::class.java)
         startActivity(intent)
         return true
     }

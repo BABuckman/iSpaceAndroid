@@ -8,12 +8,14 @@
         <entry key="app/src/main/res/layout/activity_booking.xml" value="0.21458333333333332" />
         <entry key="app/src/main/res/layout/activity_feedback.xml" value="0.22916666666666666" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/activity_intro.xml" value="0.17604166666666668" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/booking_grid_items.xml" value="0.21458333333333332" />
-        <entry key="app/src/main/res/layout/booking_items.xml" value="0.35089721679687497" />
+        <entry key="app/src/main/res/layout/booking_items.xml" value="0.2961876832844575" />
         <entry key="app/src/main/res/layout/drawer_header.xml" value="0.21458333333333332" />
         <entry key="app/src/main/res/layout/home_content.xml" value="0.21458333333333332" />
-        <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/slide_item_container.xml" value="0.17604166666666668" />
+        <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.25" />
       </map>
     </option>
   </component>

@@ -68,19 +68,12 @@
                 android:layout_margin="15dp"
                 android:hint="Travelling To"
                 />
-
-            <DatePicker
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btnDateTimePick"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtBookingDate"
-                android:datePickerMode="spinner"
-                android:layout_margin="15dp"/>
-            <TimePicker
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtBookingTime"
-
-                android:layout_margin="15dp"/>
+                android:layout_gravity="center_horizontal"
+                android:text="Pick Date and Time" />
 
             <Button
                 android:layout_width="wrap_content"
