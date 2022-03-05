@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable-v24/drawer_item_bg.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable-v24/drawer_item_selector.xml" value="0.1575" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <entry key="app/src/main/res/drawable/shape_button_rounded.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_booking.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_feedback.xml" value="0.22916666666666666" />
@@ -20,6 +21,8 @@
         <entry key="app/src/main/res/layout/slide_item_container.xml" value="0.17604166666666668" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.22" />
 =======
+=======
+>>>>>>> 497c73959c691ed45c5e44a7dd9fa80e8203575e
         <entry key="app/src/main/res/layout/activity_booking.xml" value="0.1203125" />
         <entry key="app/src/main/res/layout/activity_feedback.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.21" />
