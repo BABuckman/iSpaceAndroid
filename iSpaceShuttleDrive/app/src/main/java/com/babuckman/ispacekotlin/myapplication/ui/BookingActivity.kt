@@ -7,6 +7,7 @@ import android.widget.DatePicker
 import android.widget.TimePicker
 import android.text.format.DateFormat
 import android.widget.Toast
+import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
 import com.babuckman.ispacekotlin.myapplication.databinding.ActivityBookingBinding
 import java.util.*
@@ -23,27 +24,44 @@ class BookingActivity:AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBookingBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
 
         //retrieve bus information
-        val intent = getIntent()
+        val busHeading:String = intent.getStringExtra("busHeading").toString()
         val busType:String = intent.getStringExtra("busType").toString()
         val busNumber:String = intent.getStringExtra("busNumber").toString()
-        //val busSeat:String = intent.getIntExtra("busSeat")
-        val busImage = intent.getStringExtra("busImage")
+        val busSeat:Int = intent.getIntExtra("busSeat", 1).toInt()
+        val busImage = intent.getIntExtra("busImage", 1).toInt()
 
+        binding.txtBookingBusHeading.text = busHeading.toString()
         binding.txtBookingBusType.text = "Type: " + busType.toString()
         binding.txtBookingBusNumber.text = "Bus No.: ${busNumber.toString()}"
-        //binding.txtBookingSeats.text = "No. of seats: " + busSeat.toString()
+        binding.txtBookingSeats.text = "No. of seats: " + busSeat.toString()
+        binding.imgBooking.setImageResource(busImage)
 
-        binding.btnDateTimePick.setOnClickListener {
+        binding.btnDatePick.setOnClickListener {
             val calender:Calendar = Calendar.getInstance()
             day = calender.get(Calendar.DAY_OF_MONTH)
             month = calender.get(Calendar.MONTH)
             year = calender.get(Calendar.YEAR)
             val datePicker = DatePickerDialog(this@BookingActivity,this@BookingActivity,year, month, day)
             datePicker.show()
+        }
+
+        binding.btnTimePick.setOnClickListener {
+            val calendar: Calendar = Calendar.getInstance()
+            hour = calendar.get(Calendar.HOUR)
+            minute = calendar.get(Calendar.MINUTE)
+            val timePicker = TimePickerDialog(this,this,hour,minute,DateFormat.is24HourFormat(this))
+            timePicker.show()
+        }
+
+        binding.toggleRamp.setOnClickListener {
+            if(it.isEnabled){
+                //Set what happens to toggle button after click
+            }else{
+                Toast.makeText(this@BookingActivity, "No disability option", Toast.LENGTH_SHORT).show()
+            }
         }
 
         //add back button to action bar
@@ -53,11 +71,6 @@ class BookingActivity:AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
 
     override fun onDateSet(p0: DatePicker?, yr: Int, mon: Int, dayofmonth: Int) {
         Toast.makeText(this, "Year: $yr Month: $mon Day: $dayofmonth", Toast.LENGTH_SHORT).show()
-        val calendar: Calendar = Calendar.getInstance()
-        hour = calendar.get(Calendar.HOUR)
-        minute = calendar.get(Calendar.MINUTE)
-        val timePicker = TimePickerDialog(this,this,hour,minute,DateFormat.is24HourFormat(this))
-        timePicker.show()
     }
 
     override fun onTimeSet(p0: TimePicker?, hr: Int, min: Int) {

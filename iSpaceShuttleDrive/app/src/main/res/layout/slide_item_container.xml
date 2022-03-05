@@ -47,7 +47,7 @@
         android:layout_marginTop="120dp"
         android:gravity="center"
         android:text="Title Text"
-        android:textColor="#FF018786"
+        android:textColor="@color/company_color_1"
         android:textSize="28sp"
         android:textStyle="bold" />
 

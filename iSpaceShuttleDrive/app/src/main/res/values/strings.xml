@@ -7,4 +7,5 @@
     <string name="todo">TODO</string>
     <string name="user_feedback">User Feedback</string>
     <string name="type_comment_here">type comment here</string>
+    <string name="new_user_register_now">New user, register now</string>
 </resources>
