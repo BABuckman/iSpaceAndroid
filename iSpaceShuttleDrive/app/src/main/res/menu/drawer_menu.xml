@@ -5,13 +5,13 @@
             android:title="Booking"
             android:icon="@drawable/booking"/>
 
+        <item android:id="@+id/invoice"
+            android:title="Invoice/Receipt"
+            android:icon="@drawable/receipt"/>
+
         <item android:id="@+id/promotions"
             android:title="Promotions"
-            android:icon="@drawable/rating"/>
-
-        <item android:id="@+id/invoice"
-            android:title="Invoice and Receipt"
-            android:icon="@drawable/receipt"/>
+            android:icon="@drawable/promo"/>
 
         <item android:id="@+id/history"
             android:title="History"
@@ -24,12 +24,9 @@
         <item android:id="@+id/rateus"
             android:title="Rate us"
             android:icon="@drawable/rating"/>
-        <item android:title="Account Settings">
-            <menu>
-                <item android:id="@+id/logout"
-                    android:title="Logout"
-                    android:icon="@drawable/logout"/>
-            </menu>
-        </item>
+
+        <item android:id="@+id/logout"
+            android:title="Logout"
+            android:icon="@drawable/logout"/>
     </group>
 </menu>

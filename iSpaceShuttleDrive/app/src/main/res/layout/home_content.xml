@@ -8,9 +8,8 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-        <!--android:theme="@style/ThemeOverlay.Material3.NavigationView"-->
-
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.Material3.NavigationView">
 
         <!--Toolbar here -->
         <androidx.appcompat.widget.Toolbar

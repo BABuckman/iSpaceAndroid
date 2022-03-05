@@ -15,6 +15,7 @@
     <color name="colorTextPrimary">#212121</color>
     <color name="colorTextSecondary">#757575</color>
     <color name="colorSecondary">#663300</color>
+
     <!-- Shuttle Drive Colors -->
     <color name="company_color_1">#ffbb33</color>
     <color name="company_color_2">#ffc34d</color>
