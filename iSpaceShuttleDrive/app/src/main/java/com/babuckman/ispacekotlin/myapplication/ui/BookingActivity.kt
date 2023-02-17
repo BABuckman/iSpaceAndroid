@@ -2,6 +2,7 @@ package com.babuckman.ispacekotlin.myapplication.ui
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.DatePicker
 import android.widget.TimePicker
@@ -20,6 +21,7 @@ class BookingActivity:AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
     var year: Int = 0
     var hour: Int = 0
     var minute: Int = 0
+    var assessibility:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,14 +58,31 @@ class BookingActivity:AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
             timePicker.show()
         }
 
-        binding.toggleRamp.setOnClickListener {
-            if(it.isEnabled){
+        binding.toggleRamp.setOnClickListener {tog->
+            if(tog.isEnabled){
                 //Set what happens to toggle button after click
+                assessibility = true
             }else{
                 Toast.makeText(this@BookingActivity, "No disability option", Toast.LENGTH_SHORT).show()
             }
         }
 
+        binding.btnBook.setOnClickListener {
+            Toast.makeText(this@BookingActivity, "Success!", Toast.LENGTH_SHORT).show()
+            var intent = Intent(this@BookingActivity, BookingSummaryActivity::class.java)
+            intent.putExtra("busHeading", busHeading)
+            intent.putExtra("busType", busType)
+            intent.putExtra("busNumber", busNumber)
+            intent.putExtra("busSeats", busSeat)
+            intent.putExtra("busImage", busImage)
+            intent.putExtra("day", day)
+            intent.putExtra("month", month)
+            intent.putExtra("year", year)
+            intent.putExtra("hour", hour )
+            intent.putExtra("minute",minute )
+            intent.putExtra("assessibility", assessibility)
+            startActivity(intent)
+        }
         //add back button to action bar
         setSupportActionBar(binding.myToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/dice_1.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_one_dice.xml" value="0.21458333333333332" />
         <entry key="app/src/main/res/layout/fragment_two_dice.xml" value="0.21458333333333332" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.4453125" />

@@ -101,42 +101,42 @@ class HomeActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
     }
 
-    fun goToPromotions(): Boolean {
+    private fun goToPromotions(): Boolean {
         Toast.makeText(this@HomeActivity, "Success! To Promotions", Toast.LENGTH_SHORT).show()
         return true
     }
 
-    fun goToLogout():Boolean {
+    private fun goToLogout():Boolean {
         //Toast.makeText(this@HomeActivity, "Success! To logout", Toast.LENGTH_SHORT).show()
         val intent = Intent(this@HomeActivity, MainActivity::class.java)
         startActivity(intent)
         return true
     }
 
-    fun goToRate():Boolean{
+    private fun goToRate():Boolean{
         Toast.makeText(this@HomeActivity, "Success! To Rate us", Toast.LENGTH_SHORT).show()
         return true
     }
 
-    fun goToFeedback():Boolean {
-        intent = Intent(this@HomeActivity, FeedbackActivity::class.java)
+    private fun goToFeedback():Boolean {
+        var intent = Intent(this@HomeActivity, FeedbackActivity::class.java)
         startActivity(intent)
         return true
     }
 
-    fun goToHistory(): Boolean {
+    private fun goToHistory(): Boolean {
         Toast.makeText(this@HomeActivity, "Success! To History", Toast.LENGTH_SHORT).show()
         return true
     }
 
-    fun goToInvoice(): Boolean {
+    private fun goToInvoice(): Boolean {
         Toast.makeText(this@HomeActivity, "Success! To Invoice", Toast.LENGTH_SHORT).show()
         return true
     }
 
-    fun goToBooking(): Boolean {
+    private fun goToBooking():Boolean {
         Toast.makeText(this@HomeActivity, "Success! To Booking", Toast.LENGTH_SHORT).show()
-        intent = Intent(this@HomeActivity, HomeActivity::class.java)
+        var intent = Intent(this@HomeActivity, HomeActivity::class.java)
         startActivity(intent)
         return true
     }
